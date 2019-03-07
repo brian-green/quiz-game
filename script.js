@@ -19,7 +19,15 @@
     } else {
       console.log("Wrong.")
     }
-  }
+  };
+
+  Question.prototype.endlessQuiz = function(){
+    while (true) {
+      var n = Math.floor(Math.random()*questionsArray.length);
+      questionsArray[n].quizTime();
+      questionsArray[n].quizCheck();
+    }
+  };
 
   var question1 = new Question('Who has hit the most home runs?',['Barry Bonds','Hank Aaron','Mark McGwire'],1);
   var question2 = new Question('What is the capital of Spain?',['Barcelona','Madrid','Catalonia'],2);
@@ -31,4 +39,5 @@
 
   questionsArray[n].quizTime();
   questionsArray[n].quizCheck();
+  questionsArray[n].endlessQuiz();
 })();
