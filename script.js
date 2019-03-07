@@ -17,16 +17,17 @@
     if (this.correct === (parseInt(this.player_choice))) {
       console.log("Correct!")
     } else {
-      console.log("Wrong.")
+        console.log("Wrong.")
     }
   };
 
   Question.prototype.endlessQuiz = function(){
-    while (true) {
+    while (this.player_choice != "exit") {
       var n = Math.floor(Math.random()*questionsArray.length);
       questionsArray[n].quizTime();
       questionsArray[n].quizCheck();
     }
+    console.log("Bye bye");
   };
 
   var question1 = new Question('Who has hit the most home runs?',['Barry Bonds','Hank Aaron','Mark McGwire'],1);
